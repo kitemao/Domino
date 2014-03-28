@@ -82,7 +82,7 @@ module.exports = function (grunt) {
         connect : {
             options : {
                 port : 9999,
-                hostname : '0.0.0.0'
+                hostname : '127.0.0.1'
             },
             server : {
                 options : {
@@ -299,13 +299,27 @@ module.exports = function (grunt) {
                             'test/e2e/*.js'
                         ],
                         baseUrl: 'http://127.0.0.1:9999',
+                        // capabilities: {
+                        //     'browserName': 'phantomjs'
+                        // }
+                    }
+                    //debug: true
+                }
+            },
+            travis: {
+                options: {
+                    args: {
+                        specs: [
+                            'test/e2e/*.js'
+                        ],
+                        baseUrl: 'http://0.0.0.0:9999',
                         capabilities: {
                             'browserName': 'phantomjs'
                         }
                     }
                     //debug: true
                 }
-            },
+            }
         }
     });
 
