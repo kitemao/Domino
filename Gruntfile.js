@@ -338,9 +338,9 @@ module.exports = function (grunt) {
     grunt.registerTask('test:travis', [
         'clean:server',
         'compass:server',
-        'connect:server',
         'jshint:test',
         'karma:travis',
+        'connect:server',
         'protractor:travis'
     ]);
 
