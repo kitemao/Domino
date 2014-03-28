@@ -40,7 +40,7 @@ module.exports = function (grunt) {
 
             if (req.method === 'PUT') {
                 
-                res.statusCode = '508';
+                //res.statusCode = '508';
             }
             //grunt.log.writeln(fileStr);
             res.end(fileStr);
@@ -323,8 +323,8 @@ module.exports = function (grunt) {
 
     grunt.registerTask('test:travis', [
         'jshint:test',
-        'karma:travis',
-        'protractor:test'
+        'karma:travis'
+        //'protractor:test'
     ]);
 
     grunt.registerTask('build', [

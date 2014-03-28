@@ -7,4 +7,4 @@
    - bower install
  notifications:
    email:
-     - miaojian@wandoujia.com
+     - frontend@wandoujia.com
