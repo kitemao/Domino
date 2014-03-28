@@ -299,9 +299,6 @@ module.exports = function (grunt) {
                             'test/e2e/*.js'
                         ],
                         baseUrl: 'http://127.0.0.1:9999',
-                        capabilities: {
-                            'browserName': 'phantomjs'
-                        }
                     }
                     //debug: true
                 }
@@ -312,9 +309,9 @@ module.exports = function (grunt) {
                         specs: [
                             'test/e2e/*.js'
                         ],
-                        baseUrl: 'http://0.0.0.0:9999',
+                        baseUrl: 'http://127.0.0.1:9999',
                         capabilities: {
-                            'browserName': 'phantomjs'
+                            'browserName': 'firefox'
                         }
                     }
                     //debug: true
@@ -344,7 +341,7 @@ module.exports = function (grunt) {
         'connect:server',
         'jshint:test',
         'karma:travis',
-        'protractor:test'
+        'protractor:travis'
     ]);
 
     grunt.registerTask('build', [
