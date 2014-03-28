@@ -13,6 +13,6 @@ require(['RequireConfig', 'app'], function () {
     // }
     // else {
 
-        angular.bootstrap(document, ['domino']);
+    angular.bootstrap(document, ['domino']);
     // }
 });
