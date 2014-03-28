@@ -59,7 +59,7 @@ module.exports = function (grunt) {
                 tasks : ['compass:server']
             },
             test : {
-                files : ['<%= paths.app %>/javascripts/**/*.js', '<%= paths.test %>/**/*.js'],
+                files : ['<%= paths.app %>/business/**/*.js', '<%= paths.test %>/**/*.js'],
                 tasks : ['jshint:test', 'karma:server:run'],
                 options : {
                     spawn : false
@@ -68,7 +68,7 @@ module.exports = function (grunt) {
             livereload: {
                 files: [
                     '<%= paths.app %>/*.html',
-                    '<%= paths.app %>/javascripts/**/*.js',
+                    '<%= paths.app %>/business/**/*.js',
                     '<%= paths.app %>/images/**/*.*',
                     '<%= paths.tmp %>/stylesheets/**/*.css',
                     '<%= paths.tmp %>/images/**/*.*'
@@ -214,7 +214,7 @@ module.exports = function (grunt) {
                 appDir : '<%= paths.app %>/business',
                 dir :　'<%= paths.dist %>/business',
                 baseUrl : './',
-                mainConfigFile : '<%= paths.app %>/business/RequireConfig.js',
+                mainConfigFile : '<%= paths.app %>/business/app.js',
                 optimize : 'uglify',
                 removeCombined: true,
                 wrap: true,
@@ -347,17 +347,17 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'clean:dist',
         'concurrent:dist',
-        'requirejs:dist',
         'useminPrepare',
-        'concat',
-        'uglify',
+        //'concat',
+        //'uglify',
         'imagemin',
         'htmlmin',
+        'requirejs:dist', // need htmlmin to copy index.htmls
         'rev',
         'usemin'
     ]);
 
-    grunt.registerTask('serve:build', [
+    grunt.registerTask('server:build', [
         'build',
         'connect:build:keepalive'
     ]);
