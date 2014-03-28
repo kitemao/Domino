@@ -1,4 +1,3 @@
-console.info(111);
 require.config({
     baseUrl: '/business',
     paths : {
