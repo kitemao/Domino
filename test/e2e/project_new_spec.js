@@ -47,7 +47,9 @@ describe('projects/new', function () {
 
 
     // open new page
-    browser.get('/projects/new?e2e');
+    beforeEach(function () {
+        browser.get('/projects/new?e2e');
+    });
 
     describe('title', function () {
         var input, wrap, hint, error;
@@ -65,7 +67,7 @@ describe('projects/new', function () {
         });
 
         it('input blank error', function () {
-        
+
             blank(input, wrap, hint, error, 'Not allow blank');
         });
 
@@ -92,12 +94,12 @@ describe('projects/new', function () {
         });
 
         it('input blank error', function () {
-            
+
             blank(input, wrap, hint, error, 'Not allow blank');
         });
 
         describe('input validate', function () {
-            
+
             it('www.wandoulab.com', function () {
                 invalid('www.wandoulab.com', input, wrap, hint, error, 'Not a url');
             });
@@ -135,7 +137,7 @@ describe('projects/new', function () {
             it('111', function () {
                 invalid('111', input, wrap, hint, error,  'Input is not invalid');
             });
-            
+
             it('|111.222.333', function () {
                 invalid('|111.222.333', input, wrap, hint, error,  'Input is not invalid');
             });
@@ -176,7 +178,7 @@ describe('projects/new', function () {
             it('111', function () {
                 invalid('111', input, wrap, hint, error, 'Input is not invalid');
             });
-            
+
             it('|111.222.333', function () {
                 invalid('|111.222.333', input, wrap, hint, error, 'Input is not invalid');
             });
@@ -198,7 +200,7 @@ describe('projects/new', function () {
             submitBtn.click();
 
             browser.getCurrentUrl().then(function (url) {
-                
+
                 expect(url).toEqual(browser.baseUrl + '/projects?e2e');
             });
         });
