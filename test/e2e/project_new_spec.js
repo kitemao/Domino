@@ -49,7 +49,9 @@ describe('projects/new', function () {
     // open new page
     //beforeEach(function () {
     var ptor = protractor.getInstance();
-    ptor.driver.get('http://127.0.0.1:9999/projects/new?e2e');
+    console.info(ptor);
+    ptor.ignoreSynchronization = true;
+    ptor.get('http://127.0.0.1:9999/projects/new?e2e');
     ptor.sleep(3000);
     //});
 
