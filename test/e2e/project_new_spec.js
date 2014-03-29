@@ -47,9 +47,10 @@ describe('projects/new', function () {
 
 
     // open new page
-    beforeEach(function () {
-        browser.get('/projects/new?e2e');
-    });
+    //beforeEach(function () {
+    var ptor = protractor.getInstance();
+    ptor.driver.get('/projects/new?e2e');
+    //});
 
     describe('title', function () {
         var input, wrap, hint, error;
