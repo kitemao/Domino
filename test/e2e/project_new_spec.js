@@ -49,7 +49,7 @@ describe('projects/new', function () {
     // open new page
     //beforeEach(function () {
     var ptor = protractor.getInstance();
-    ptor.driver.get('/projects/new?e2e');
+    ptor.driver.get('http://127.0.0.1:9999/projects/new?e2e');
     //});
 
     describe('title', function () {
