@@ -46,14 +46,17 @@ describe('projects/new', function () {
 
 
 
+    var ptor;
     // open new page
     //beforeEach(function () {
-    var ptor = protractor.getInstance();
-    console.info(ptor);
+    ptor = protractor.getInstance();
     ptor.ignoreSynchronization = true;
-    ptor.get('http://127.0.0.1:9999/projects/new?e2e');
-    ptor.sleep(3000);
     //});
+
+    console.info(ptor);
+    console.info(ptor.driver);
+
+    ptor.driver.get('http://127.0.0.1:9999/projects/new?e2e');
 
     describe('title', function () {
         var input, wrap, hint, error;
