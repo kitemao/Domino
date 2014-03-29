@@ -214,7 +214,7 @@ module.exports = function (grunt) {
                 appDir : '<%= paths.app %>/business',
                 dir :　'<%= paths.dist %>/business',
                 baseUrl : './',
-                mainConfigFile : '<%= paths.app %>/business/app.js',
+                mainConfigFile : '<%= paths.app %>/business/AppLoader.js',
                 optimize : 'uglify',
                 removeCombined: true,
                 wrap: true,
